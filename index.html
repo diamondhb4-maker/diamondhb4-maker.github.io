@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mi primera web</title>
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+<script>
+function abrir(imagen) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = imagen.src;
+    document.getElementById("lightbox-titulo").textContent = imagen.dataset.titulo;
+    document.getElementById("lightbox-sinopsis").textContent = imagen.dataset.sinopsis;
+}
+
+function cerrar() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+<footer>
+    <p>Proyecto personal · Hecho por gel · 2025</p>
+</footer>
+
+
+<body>
+    <img src="imagenes/resplandor.jpg" alt="Imagen de El Resplandor">
+    <nav>
+    <a href="index.html">Inicio</a> |
+    <a href="sobre-mi.html">Sobre mí</a>
+</nav>
+
+
+  
+
+    <h1>Mis películas favoritas</h1>
+
+    <p>
+        Un pequeño vistazo a películas que me han gustado 
+    </p>
+
+    <h2>Sobre mí</h2>
+
+    <p>
+        Estoy aprendiendo a hacer páginas web y esto me está gustando más de lo que pensaba.
+    </p>
+    <p>by gel</p>
+<h2>Galería</h2>
+
+<div class="galeria">
+    <div class="pelicula">
+    <img 
+  src="imagenes/resplandor.jpg"
+  alt="El Resplandor"
+  onclick="abrir(this)"
+  data-titulo="El Resplandor"
+  data-sinopsis="Un escritor acepta un trabajo como cuidador de un hotel aislado durante el invierno, donde fuerzas oscuras empiezan a afectar a su cordura."
+>
+
+    <div class="estrellas">★★★★★</div>
+</div>
+
+    <div class="pelicula">
+    <img 
+  src="imagenes/alien.jpg"
+  alt="Alien"
+  onclick="abrir(this)"
+  data-titulo="Alien"
+  data-sinopsis="La tripulación de una nave espacial responde a una señal de socorro y se enfrenta a una forma de vida mortal."
+>
+
+    <div class="estrellas">★★★★☆</div>
+</div>
+
+<div class="pelicula">
+    <img 
+  src="imagenes/regresoalfuturo.jpg"
+  alt="Regreso al Futuro"
+  onclick="abrir(this)"
+  data-titulo="Regreso al Futuro"
+  data-sinopsis="Un adolescente viaja accidentalmente al pasado en un coche modificado y debe asegurarse de que sus padres se enamoren."
+>
+
+    <div class="estrellas">★★★★★</div>
+</div>
+
+</div>
+
+<div id="lightbox" onclick="cerrar()">
+    <div class="contenido">
+        <img id="lightbox-img">
+        <h3 id="lightbox-titulo"></h3>
+        <p id="lightbox-sinopsis"></p>
+    </div>
+</div>
+
+
+</body>
+</html>
